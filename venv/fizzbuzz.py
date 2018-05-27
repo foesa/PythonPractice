@@ -2,29 +2,33 @@
 """fizzcheck"""
 def fizzcheck(x):
     truecheck = False
-    if(x % fizz == 0):
-        return(truecheck == True)
+    if x % fizz == 0 and x != 1:
+        truecheck = True
+        return truecheck
     else:
-        return(truecheck)
+        return truecheck
+
 """buzzcheck"""
 def buzzcheck(x):
-    truecheck = False
-    if(x % buzz == 0):
-        return(truecheck==True)
+    truecheck2 = False
+    if x % buzz == 0 and x != 1:
+        truecheck2 = True
+        return truecheck2
     else:
-        return(truecheck==False)
+        return truecheck2
+
 """mainline"""""
-fizz = input("Please enter the number for fizz: ")
-buzz = input("Please enter the number for buzz: ")
+fizz = int(input("Please enter the number for fizz: "))
+buzz = int(input("Please enter the number for buzz: "))
 fizzbuzz = fizz*buzz
-for count in range(0,100):
+for count in range(1,100):
     boolfizz = fizzcheck(count)
     boolbuzz = buzzcheck(count)
-    if(boolfizz == True & boolfizz==boolbuzz):
+    if boolfizz == True and boolfizz == boolbuzz :
         print("FizzBuzz!")
-    elif(boolfizz == True & boolfizz!=boolbuzz):
+    elif boolfizz == True and boolfizz != boolbuzz:
         print("Fizz!")
-    elif((boolfizz != True & boolfizz!=boolbuzz)):
+    elif boolfizz == False and boolfizz != boolbuzz:
         print("Buzz!")
     else:
         print(count)
